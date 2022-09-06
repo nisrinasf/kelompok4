@@ -1,14 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:belajarflutter/register_view.dart';
-import 'package:belajarflutter/theme.dart';
-import 'package:belajarflutter/widgets/custom_checkbox.dart';
-import 'package:belajarflutter/widgets/primary_button.dart';
+import 'package:KELOMPOK4/register_view.dart';
+import 'package:be/theme.dart';
+import 'package:KELOMPOK4/widgets/custom_checkbox.dart';
+import 'package:KELOMPOK4/widgets/primary_button.dart';
+
 class LoginPage extends StatefulWidget {
-  const LoginPage({ Key? key }) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
   @override
   _LoginPageState createState() => _LoginPageState();
 }
+
 class _LoginPageState extends State<LoginPage> {
   bool passwordVisible = false;
   void togglePassword() {
@@ -16,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
       passwordVisible = !passwordVisible;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +36,9 @@ class _LoginPageState extends State<LoginPage> {
                     'APP Flutter\nLogin',
                     style: heading2.copyWith(color: textBlack),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Image.asset(
                     'assets/images/accent.png',
                     width: 99,
@@ -41,78 +46,94 @@ class _LoginPageState extends State<LoginPage> {
                   )
                 ],
               ),
-              SizedBox(height: 48,),
+              SizedBox(
+                height: 48,
+              ),
               Form(
-                child: Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
+                  child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
                         color: textWhiteGrey,
-                        borderRadius: BorderRadius.circular(14)
-                      ),
-                      child: TextFormField(
-                        decoration: InputDecoration(
+                        borderRadius: BorderRadius.circular(14)),
+                    child: TextFormField(
+                      decoration: InputDecoration(
                           hintText: 'Email',
                           hintStyle: heading6.copyWith(color: textGrey),
-                          border: OutlineInputBorder(borderSide: BorderSide.none)
-                        ),
-                      ),
+                          border:
+                              OutlineInputBorder(borderSide: BorderSide.none)),
                     ),
-                    SizedBox(height: 32,),
-                    Container(
-                      decoration: BoxDecoration(
+                  ),
+                  SizedBox(
+                    height: 32,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
                         color: textWhiteGrey,
-                        borderRadius: BorderRadius.circular(14)
-                      ),
-                      child: TextFormField(
-                        obscureText: !passwordVisible,
-                        decoration: InputDecoration(
+                        borderRadius: BorderRadius.circular(14)),
+                    child: TextFormField(
+                      obscureText: !passwordVisible,
+                      decoration: InputDecoration(
                           hintText: 'Password',
                           hintStyle: heading6.copyWith(color: textGrey),
                           suffixIcon: IconButton(
                             color: textGrey,
                             splashRadius: 1,
-                            icon: Icon(passwordVisible ? Icons.visibility_outlined : Icons.visibility_off_outlined),
-                            onPressed: togglePassword, 
+                            icon: Icon(passwordVisible
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined),
+                            onPressed: togglePassword,
                           ),
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide.none
-                          )
-                        ),
-                      ),
-                    )
-                  ],
-                )
+                          border:
+                              OutlineInputBorder(borderSide: BorderSide.none)),
+                    ),
+                  )
+                ],
+              )),
+              SizedBox(
+                height: 32,
               ),
-              SizedBox(height: 32,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CustomCheckbox(),
-                  SizedBox(width: 12,),
-                  Text('Remember me', style: regular16pt,)
+                  SizedBox(
+                    width: 12,
+                  ),
+                  Text(
+                    'Remember me',
+                    style: regular16pt,
+                  )
                 ],
               ),
-              SizedBox(height: 32,),
+              SizedBox(
+                height: 32,
+              ),
               CustomPrimaryButton(
                 buttonColor: primaryBlue,
                 textValue: 'Login',
                 textColor: Colors.white,
               ),
-              SizedBox(height: 24,),
+              SizedBox(
+                height: 24,
+              ),
               Center(
                 child: Text(
                   'Or',
                   style: heading6.copyWith(color: textGrey),
                 ),
               ),
-              SizedBox(height: 24,),
+              SizedBox(
+                height: 24,
+              ),
               CustomPrimaryButton(
                 buttonColor: colorLight,
                 textValue: 'Login with Google',
                 textColor: textBlack,
               ),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -123,11 +144,9 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) => RegisterPage()
-                        )
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterPage()));
                     },
                     child: Text(
                       'Register',
@@ -139,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
         ),
-        ),
+      ),
     );
   }
 }
