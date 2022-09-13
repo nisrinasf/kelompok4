@@ -87,3 +87,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+   aktiva:
+    - aset/gambar/
+   # - aset/gambar/splash.png
+  font:
+    - keluarga: Lato
+      font:
+        - aset: aset/font/Lato-Regular. ttf
+          berat: 400
+        - aset: aset/font/Lato-SemiBold. ttf
+          berat: 600
+        - aset: aset/font/Lato-Bold. ttf
+          berat: 700
