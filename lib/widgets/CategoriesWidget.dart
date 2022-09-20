@@ -7,6 +7,7 @@ class CategoriesWidget extends StatelessWidget{
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
+          for (int i = 1; i < 8; i++)
         Container(
           margin: EdgeInsets.symmetric(horizontal: 8.0),
           padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -17,11 +18,20 @@ class CategoriesWidget extends StatelessWidget{
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-              Image.asset("images/hot.png",
-              width: 40,
-              height: 40,
+              Image.asset("asset/$i.png",
+              width: 100,
+              height: 100,
               ),
-            ],),
+              Text(
+                "Makanan",
+                 style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Colors.green,
+                ),
+              ),
+            ],
+            ),
         ),
       ],
       ),
