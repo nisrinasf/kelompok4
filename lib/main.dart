@@ -113,3 +113,15 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+assets:
+    - assets/images/
+    # - assets/images/splash.png
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Lato-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Lato-Bold.ttf
+          weight: 700
